@@ -1,0 +1,81 @@
+\hypertarget{main_8cpp}{}\doxysection{/home/kyle/\+Desktop/\+Concurrency/\+C\+D\+D\+Labs/\+Lab02/main.cpp File Reference}
+\label{main_8cpp}\index{/home/kyle/Desktop/Concurrency/CDDLabs/Lab02/main.cpp@{/home/kyle/Desktop/Concurrency/CDDLabs/Lab02/main.cpp}}
+{\ttfamily \#include \char`\"{}Semaphore.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{Indent}\textbf{ Semaphores}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a2b4729d561c345111ccab970fe11e229}{task\+One}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$ the\+Semaphore, int delay)
+\begin{DoxyCompactList}\small\item\em This function task one will first sleep and then print out the string before signaling other threads. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_ae4ea9570be601d182fa473c7ca431852}{task\+Two}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$ the\+Semaphore)
+\begin{DoxyCompactList}\small\item\em This function will first wait until it is signalled to run by another thread. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_a6288eba0f8e8ad3ab1544ad731eb7667}{main}} (void)
+\begin{DoxyCompactList}\small\item\em driver of \mbox{\hyperlink{main_8cpp}{main.\+cpp}}. It creates 2 threads and a semaphore that is shared between them. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a6288eba0f8e8ad3ab1544ad731eb7667}\label{main_8cpp_a6288eba0f8e8ad3ab1544ad731eb7667}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily void main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+driver of \mbox{\hyperlink{main_8cpp}{main.\+cpp}}. It creates 2 threads and a semaphore that is shared between them. 
+
+Main function $<$ Launch the threads ~\newline
+
+
+$<$ Wait for the threads to finish
+
+Definition at line 58 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a2b4729d561c345111ccab970fe11e229}\label{main_8cpp_a2b4729d561c345111ccab970fe11e229}} 
+\index{main.cpp@{main.cpp}!taskOne@{taskOne}}
+\index{taskOne@{taskOne}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{taskOne()}{taskOne()}}
+{\footnotesize\ttfamily void task\+One (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$}]{the\+Semaphore,  }\item[{int}]{delay }\end{DoxyParamCaption})}
+
+
+
+This function task one will first sleep and then print out the string before signaling other threads. 
+
+displays a message first
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\+Semaphore} & The semaphore used to handle synchronization \\
+\hline
+{\em delay} & the amount of time the thread has to wait to sleep\\
+\hline
+\end{DoxyParams}
+\mbox{\hyperlink{class_semaphore}{Semaphore}} is initially set to 0. the function should print \char`\"{}\+I must print first\char`\"{} on one line. 
+
+Definition at line 26 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_ae4ea9570be601d182fa473c7ca431852}\label{main_8cpp_ae4ea9570be601d182fa473c7ca431852}} 
+\index{main.cpp@{main.cpp}!taskTwo@{taskTwo}}
+\index{taskTwo@{taskTwo}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{taskTwo()}{taskTwo()}}
+{\footnotesize\ttfamily void task\+Two (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$}]{the\+Semaphore }\end{DoxyParamCaption})}
+
+
+
+This function will first wait until it is signalled to run by another thread. 
+
+displays a message second
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\+Semaphore} & the semaphore used to handle synchronization\\
+\hline
+\end{DoxyParams}
+\mbox{\hyperlink{class_semaphore}{Semaphore}} is initially set to 0. The function prints out \char`\"{}\+This will appear second\char`\"{}. 
+
+Definition at line 42 of file main.\+cpp.
+
