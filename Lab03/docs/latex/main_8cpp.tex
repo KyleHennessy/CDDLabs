@@ -1,0 +1,73 @@
+\hypertarget{main_8cpp}{}\doxysection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.cpp@{main.cpp}}
+{\ttfamily \#include \char`\"{}Semaphore.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+\doxysubsection*{Functions}
+\begin{Indent}\textbf{ Rendezvous}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a9141e3eb0b1274e58b053fd8a60a94e3}{task\+One}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$ first\+Sem, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$ second\+Sem, int delay)
+\begin{DoxyCompactList}\small\item\em This function task one will sleep for 5 seconds before displaying the message\char`\"{}\+Task One has arrived!\char`\"{}. It will then signal the other thread that it is finished and wait for that to finish. When that finishes, the message \char`\"{}\+Task one has left!\char`\"{} will be printed and the task will be finished. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_ac7cb6b39082835c7e3c853c42af9ecdc}{task\+Two}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$ first\+Sem, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$ second\+Sem, int delay)
+\begin{DoxyCompactList}\small\item\em This function task two will sleep for 1 seconds before displaying the message\char`\"{}\+Task Two has arrived\char`\"{}. It will then signal the other thread that it is finished and wait for that to finish. When that finishes, the message \char`\"{}\+Task Two has left\char`\"{} will be printed and the task will be finished. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_a6288eba0f8e8ad3ab1544ad731eb7667}{main}} (void)
+\begin{DoxyCompactList}\small\item\em driver of \mbox{\hyperlink{main_8cpp}{main.\+cpp}}. Creates two threads and two semaphores \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a6288eba0f8e8ad3ab1544ad731eb7667}\label{main_8cpp_a6288eba0f8e8ad3ab1544ad731eb7667}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily void main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+driver of \mbox{\hyperlink{main_8cpp}{main.\+cpp}}. Creates two threads and two semaphores 
+
+Main function $<$ Launch the threads ~\newline
+\mbox{\Hypertarget{main_8cpp_a9141e3eb0b1274e58b053fd8a60a94e3}\label{main_8cpp_a9141e3eb0b1274e58b053fd8a60a94e3}} 
+\index{main.cpp@{main.cpp}!taskOne@{taskOne}}
+\index{taskOne@{taskOne}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{taskOne()}{taskOne()}}
+{\footnotesize\ttfamily void task\+One (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$}]{first\+Sem,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$}]{second\+Sem,  }\item[{int}]{delay }\end{DoxyParamCaption})}
+
+
+
+This function task one will sleep for 5 seconds before displaying the message\char`\"{}\+Task One has arrived!\char`\"{}. It will then signal the other thread that it is finished and wait for that to finish. When that finishes, the message \char`\"{}\+Task one has left!\char`\"{} will be printed and the task will be finished. 
+
+displays a message that is split in to 2 sections to show how a rendezvous works
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & delay How long the thread will be delayed for \\
+\hline
+{\em first\+Sem} & \mbox{\hyperlink{class_semaphore}{Semaphore}} for the first thread that runs \\
+\hline
+{\em second\+Sem} & \mbox{\hyperlink{class_semaphore}{Semaphore}} for the second thread that runs \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8cpp_ac7cb6b39082835c7e3c853c42af9ecdc}\label{main_8cpp_ac7cb6b39082835c7e3c853c42af9ecdc}} 
+\index{main.cpp@{main.cpp}!taskTwo@{taskTwo}}
+\index{taskTwo@{taskTwo}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{taskTwo()}{taskTwo()}}
+{\footnotesize\ttfamily void task\+Two (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$}]{first\+Sem,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$}]{second\+Sem,  }\item[{int}]{delay }\end{DoxyParamCaption})}
+
+
+
+This function task two will sleep for 1 seconds before displaying the message\char`\"{}\+Task Two has arrived\char`\"{}. It will then signal the other thread that it is finished and wait for that to finish. When that finishes, the message \char`\"{}\+Task Two has left\char`\"{} will be printed and the task will be finished. 
+
+displays a message that is split in to 2 sections to show how a rendezvous works
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & delay How long the thread will be delayed for \\
+\hline
+{\em first\+Sem} & \mbox{\hyperlink{class_semaphore}{Semaphore}} for the first thread that runs \\
+\hline
+{\em second\+Sem} & \mbox{\hyperlink{class_semaphore}{Semaphore}} for the second thread that runs \\
+\hline
+\end{DoxyParams}

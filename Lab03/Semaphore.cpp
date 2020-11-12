@@ -7,8 +7,10 @@
 */
 
 
-
-
+/*! \fn void Semaphore::Wait()
+    \brief This function will place the current thread on the block queue
+    if the S count is less than 0. The s count is then decremented.
+*/
 void Semaphore::Wait()
 {
       std::unique_lock< std::mutex > lock(m_mutex);
@@ -26,6 +28,11 @@ bool Semaphore::Wait(const std::chrono::duration<R,P>& crRelTime)
       --m_uiCount;
       return true;
 }
+
+/*! \fn void Semaphore::Signal()
+    \brief This function will Signal the current thread to be ran and increments
+    the count
+*/
 
 void Semaphore::Signal()
 {
